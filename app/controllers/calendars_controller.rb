@@ -28,7 +28,7 @@ class CalendarsController < ApplicationController
     plans = Plan.where(date: @todays_date..@todays_date + 6)
 
     wday_num = Date.today.wday
-    7.times do 
+    7.times do |x|
       today_plans = []
       plan = plans.map do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
